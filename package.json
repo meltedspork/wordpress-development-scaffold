@@ -1,0 +1,30 @@
+{
+  "name": "wordpress-development-scaffold",
+  "version": "0.0.1",
+  "description": "Wordpress development scaffold - quick way to set up local development with Wordpress!\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up",
+    "stop": "docker-compose down",
+    "restart": "npm run stop && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meltedspork/wordpress-development-scaffold.git"
+  },
+  "keywords": [
+    "Wordpress",
+    "PHP",
+    "docker",
+    "Development",
+    "Database",
+    "MySQL"
+  ],
+  "author": "Jason Salerno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meltedspork/wordpress-development-scaffold/issues"
+  },
+  "homepage": "https://github.com/meltedspork/wordpress-development-scaffold#readme"
+}

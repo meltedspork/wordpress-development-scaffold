@@ -1,3 +1,11 @@
+# dotenv environment variables file
+# Never should be committed in and keep it private
+.env
+
+# Docker database
+db_data/
+
+# Wordpress that should not be committed in
 *.log
 wp-config.php
 wp-content/advanced-cache.php
