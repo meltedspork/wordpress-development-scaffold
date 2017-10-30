@@ -4,6 +4,7 @@
   "description": "Wordpress development scaffold - quick way to set up local development with Wordpress!\"",
   "main": "index.js",
   "scripts": {
+    "bash": "docker exec -it wordpress_development_app bash",
     "start": "docker-compose up",
     "stop": "docker-compose down",
     "restart": "npm run stop && npm start",

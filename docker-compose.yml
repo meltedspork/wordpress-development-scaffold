@@ -13,9 +13,12 @@ services:
       MYSQL_PASSWORD: ${MYSQL_USER_PASSWORD}
 
   wordpress:
+    container_name: wordpress_development_app
     depends_on:
       - ${MYSQL_HOST}
     image: wordpress:latest
+    volumes:
+      - ./wordpress:/var/www/html
     ports:
       - ${WORDPRESS_PORT_DOCKER}:80
     restart: always
@@ -25,6 +28,7 @@ services:
       WORDPRESS_DB_PASSWORD: ${MYSQL_USER_PASSWORD}
 
   phpmyadmin:
+    container_name: phpmyadmin_development_app
     depends_on:
       - ${MYSQL_HOST}
     image: phpmyadmin/phpmyadmin
