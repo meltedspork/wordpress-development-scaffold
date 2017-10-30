@@ -14,9 +14,11 @@ services:
 
   wordpress:
     container_name: wordpress_development_app
+    build:
+      context: ./
+      dockerfile: wordpress.Dockerfile
     depends_on:
       - ${MYSQL_HOST}
-    image: wordpress:latest
     volumes:
       - ./wordpress:/var/www/html
     ports:

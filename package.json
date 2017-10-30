@@ -3,12 +3,21 @@
   "version": "0.0.1",
   "description": "Wordpress development scaffold - quick way to set up local development with Wordpress!\"",
   "main": "index.js",
+  "commands": {
+    "wordpress": "docker exec -it wordpress_development_app"
+  },
   "scripts": {
-    "bash": "docker exec -it wordpress_development_app bash",
-    "start": "docker-compose up",
+    "bash": "$npm_package_commands_wordpress bash",
+    "start": "docker-compose up --build",
     "stop": "docker-compose down",
-    "restart": "npm run stop && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "restart": "npm stop && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wp": "$npm_package_commands_wordpress wp $1 $2 $3 $4 --allow-root",
+    "wp:info": "npm run wp -- --info",
+    "wp:plugin_install": "npm run wp -- plugin install $1 --activate",
+    "wp:plugin_delete": "npm run wp -- plugin delete $1",
+    "wp:theme_install": "npm run wp -- theme install $1 --activate",
+    "wp:theme_delete": "npm run wp -- theme delete $1"
   },
   "repository": {
     "type": "git",
