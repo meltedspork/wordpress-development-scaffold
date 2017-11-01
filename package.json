@@ -6,12 +6,21 @@
   "commands": {
     "wordpress": "docker exec -it wordpress_development_app"
   },
+  "engines": {
+    "node": "8",
+    "npm": "5"
+  },
   "scripts": {
     "bash": "$npm_package_commands_wordpress bash",
+    "lint:docker": "yamllint docker-compose.yml",
+    "lint:travis": "yamllint .travis.yml",
+    "lint:package": "pjl-cli package.json",
+    "lint:ymls": "npm run lint:docker && npm run lint:travis",
+    "lint": "npm run lint:ymls && npm run lint:package",
     "start": "docker-compose up --build",
     "stop": "docker-compose down",
     "restart": "npm stop && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
     "wp": "$npm_package_commands_wordpress wp $1 $2 $3 $4 --allow-root",
     "wp:info": "npm run wp -- --info",
     "wp:plugin_install": "npm run wp -- plugin install $1 --activate",
@@ -36,5 +45,9 @@
   "bugs": {
     "url": "https://github.com/meltedspork/wordpress-development-scaffold/issues"
   },
-  "homepage": "https://github.com/meltedspork/wordpress-development-scaffold#readme"
+  "homepage": "https://github.com/meltedspork/wordpress-development-scaffold#readme",
+  "devDependencies": {
+    "npm-package-json-lint": "^2.11.0",
+    "yaml-lint": "^1.0.0"
+  }
 }
