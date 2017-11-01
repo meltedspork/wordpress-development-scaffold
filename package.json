@@ -6,6 +6,10 @@
   "commands": {
     "wordpress": "docker exec -it wordpress_development_app"
   },
+  "engines": {
+    "node": "8",
+    "npm": "5"
+  },
   "scripts": {
     "bash": "$npm_package_commands_wordpress bash",
     "lint:package": "pjl-cli package.json",
