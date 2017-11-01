@@ -1,3 +1,3 @@
-# Wordpress Development Scafflod
+# Wordpress Development Scaffold
 
 [![Build Status](https://travis-ci.org/meltedspork/wordpress-development-scaffold.svg?branch=master)](https://travis-ci.org/meltedspork/wordpress-development-scaffold)
