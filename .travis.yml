@@ -1,5 +1,21 @@
 language: node_js
 node_js:
  - "8"
-
- 
+env:
+  # Env for docker-compose MySQL
+  MYSQL_HOST: db
+  MYSQL_PORT: 3306
+  MYSQL_DATABASE: wordpress
+  MYSQL_ROOT_USERNAME: travis
+  MYSQL_ROOT_PASSWORD: travis
+  MYSQL_USER_USERNAME: wordpress
+  MYSQL_USER_PASSWORD: wordpress
+  # Env for docker-compose ports
+  WORDPRESS_PORT_DOCKER: 8000
+  PHPMYADMIN_PORT_DOCKER: 8111
+before_install:
+  - docker-compose --version
+  - docker-compose up --build -d
+  - docker ps
+  # if we get pass this point, means dockers are good to go
+  - docker-compose down
