@@ -5,6 +5,9 @@
 # Docker database
 db_data/
 
+# NPM / Node.js
+node_modules
+
 # Wordpress files that should not be committed in
 wordpress/*
 

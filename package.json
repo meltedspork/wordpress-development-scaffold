@@ -8,10 +8,11 @@
   },
   "scripts": {
     "bash": "$npm_package_commands_wordpress bash",
+    "lint:package": "pjl-cli package.json",
     "start": "docker-compose up --build",
     "stop": "docker-compose down",
     "restart": "npm stop && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint:package",
     "wp": "$npm_package_commands_wordpress wp $1 $2 $3 $4 --allow-root",
     "wp:info": "npm run wp -- --info",
     "wp:plugin_install": "npm run wp -- plugin install $1 --activate",
@@ -36,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/meltedspork/wordpress-development-scaffold/issues"
   },
-  "homepage": "https://github.com/meltedspork/wordpress-development-scaffold#readme"
+  "homepage": "https://github.com/meltedspork/wordpress-development-scaffold#readme",
+  "devDependencies": {
+    "npm-package-json-lint": "^2.11.0"
+  }
 }
